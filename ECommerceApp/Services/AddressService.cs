@@ -91,7 +91,7 @@ namespace ECommerceApp.Services
             }
             catch (Exception ex)
             {
-                return new ApiResponse<AddressResponseDTO>(500,$"Anexpected error occurred while processing your request, Error: {ex.Message}" );
+                return new ApiResponse<AddressResponseDTO>(500,$"An unexpected error occurred while processing your request, Error: {ex.Message}" );
             }
         }
 
@@ -129,7 +129,7 @@ namespace ECommerceApp.Services
             }
             catch (Exception ex)
             {
-                return new ApiResponse<ConfirmationResponseDTO>(500, $"Anexpected error occurred while processing your request, Error: {ex.Message}");
+                return new ApiResponse<ConfirmationResponseDTO>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
             }
         }
         
@@ -159,7 +159,7 @@ namespace ECommerceApp.Services
             catch (Exception ex)
             {
                 
-                return new ApiResponse<ConfirmationResponseDTO>(500, $"Anexpected error occurred while processing your request, Error: {ex.Message}");
+                return new ApiResponse<ConfirmationResponseDTO>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
             }
         }
 
@@ -195,7 +195,7 @@ namespace ECommerceApp.Services
             catch (Exception ex)
             {
 
-                return new ApiResponse<List<AddressResponseDTO>>(500, $"Anexpected error occurred while processing your request, Error: {ex.Message}");
+                return new ApiResponse<List<AddressResponseDTO>>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
             }
         }
 
