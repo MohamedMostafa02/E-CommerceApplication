@@ -1,6 +1,7 @@
-
 using ECommerceApp.Data;
+using ECommerceApp.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace ECommerceApp
 {
@@ -21,26 +22,48 @@ namespace ECommerceApp
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
+            // Add Swagger (this enables the Swagger UI)
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "E-Commerce API",
+                    Version = "v1",
+                    Description = "API for managing customers, orders, etc."
+                });
+            });
+
             // Configure EF Core with SQL Server
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("EFCoreDBConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("EFCoreDBConnection")));
+
+            // Registering the CustomerService
+            builder.Services.AddScoped<CustomerService>();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+                // Enable Swagger and Swagger UI
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "E-Commerce API V1");
+                    c.RoutePrefix = string.Empty; // Swagger UI will open at root ("/")
+                });
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();
+     
+
         }
     }
 }
