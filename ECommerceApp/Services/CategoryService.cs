@@ -104,12 +104,12 @@ namespace ECommerceApp.Services
                     return new ApiResponse<ConfirmationResponseDTO>(400, "Another category with the same name already exists.");
                 }
 
-                // check if the category is deleted or not;
+                //// check if the category is deleted or not;
 
-                if (!category.IsActive)
-                {
-                    return new ApiResponse<ConfirmationResponseDTO>(400, "Cannot update a deleted category.");
-                }
+                //if (!category.IsActive)
+                //{
+                //    return new ApiResponse<ConfirmationResponseDTO>(400, "Cannot update a deleted category.");
+                //}
 
                 // Update category properties manually
 
