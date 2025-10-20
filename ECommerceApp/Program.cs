@@ -50,6 +50,9 @@ namespace ECommerceApp
             // Registering the ProductService
             builder.Services.AddScoped<ProductService>();
 
+            // Registering the ShoppingCartService
+            builder.Services.AddScoped<ShoppingCartService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
