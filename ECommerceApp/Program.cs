@@ -56,6 +56,12 @@ namespace ECommerceApp
             // Registering the OrderService
             builder.Services.AddScoped<OrderService>();
 
+            // Registering the PaymentService
+            builder.Services.AddScoped<PaymentService>();
+
+            // Registering the EmailService 
+            builder.Services.AddScoped<EmailService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -140,7 +140,7 @@ namespace ECommerceApp.Services
                 //    _context.Products.Update(product);
                 //}
 
-
+                // Move the CartItems to the Order.
                 foreach (var cartItem in cart.CartItems)
                 {
                     var product = await _context.Products.FindAsync(cartItem.ProductId);
