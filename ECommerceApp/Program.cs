@@ -62,6 +62,9 @@ namespace ECommerceApp
             // Registering the EmailService 
             builder.Services.AddScoped<EmailService>();
 
+            // Registering the CancellationService
+            builder.Services.AddScoped<CancellationService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
