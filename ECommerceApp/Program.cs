@@ -65,6 +65,12 @@ namespace ECommerceApp
             // Registering the CancellationService
             builder.Services.AddScoped<CancellationService>();
 
+            // Registering the RefundService
+            builder.Services.AddScoped<RefundService>();    
+
+            // Register Refund Processing Background Service
+            builder.Services.AddHostedService<RefundProcessingBackgroundService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
