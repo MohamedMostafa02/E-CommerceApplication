@@ -34,7 +34,7 @@ namespace ECommerceApp.Models
         [Required]
         public DateTime InitiatedAt { get; set; }
         // Date and time when the refund was completed
-        public DateTime CompletedAt { get; set; }
+        public DateTime? CompletedAt { get; set; }
         // Track who processed (approved) the refund
         public int? ProcessedBy { get; set; }
 
