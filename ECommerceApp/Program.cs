@@ -68,6 +68,9 @@ namespace ECommerceApp
             // Registering the RefundService
             builder.Services.AddScoped<RefundService>();    
 
+            // Registering the FeedbackService
+            builder.Services.AddScoped<FeedbackService>();
+
             // Register Refund Processing Background Service
             builder.Services.AddHostedService<RefundProcessingBackgroundService>();
 
